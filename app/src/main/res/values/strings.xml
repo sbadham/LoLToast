@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">LoL Toast</string>
+
+    <string name="greeting">Welcome to LoL Toast.  This is a simple application that will alert you when
+    a Summoner reaches a new level.
+
+    You can use this to either send you a congratulation message when you level-up or even alert you when
+    a friend/rival levels-up!</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- UI values. -->
+    <string name="region_label">Select the LoL region</string>
+    <string name="summoner_label">Summoner Name</string>
+    <string name="refresh_label">Select a refresh frequency (min)</string>
+    <string name="message_label">Enter the text included in your notification</string>
+    <string name="level_label">Current Summoner level </string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+
+    <string name="default_message">Congratulations, you have reached level</string>
+
+    <string-array name="region_options">
+        <item>BR</item>
+        <item>EUNE</item>
+        <item>EUW</item>
+        <item>KR</item>
+        <item>LAN</item>
+        <item>LAS</item>
+        <item>NA</item>
+        <item>OCE</item>
+        <item>RU</item>
+        <item>TR</item>
+    </string-array>
+
+    <string name="default_region">EUW</string>
+
+    <string-array name="refresh_options">
+        <item>10</item>
+        <item>30</item>
+        <item>60</item>
+    </string-array>
+
+    <string name="default_refresh">30</string>
+
+    <!-- Data to persist. -->
+    <string name="summoner_region">Summoner_Region</string>
+    <string name="summoner_name">Summoner_Name</string>
+    <string name="summoner_refresh">Summoner_Refresh</string>
+    <string name="summoner_msg">Summoner_Msg</string>
+    <string name="summoner_level">Summoner_Level</string>
+
+    <!-- Toast string on save. -->
+    <string name="save_confirmation">Save complete</string>
+
+    <!-- Notification strings. -->
+    <string name="notification_title">LoL Toast</string>
+    <string name="notification_error">Error Occurred</string>
+
+    <!-- JSON Status values. -->
+    <string name="json_level">summonerLevel</string>
+    <string name="json_status">status</string>
+    <string name="json_message">message</string>
+
+</resources>
