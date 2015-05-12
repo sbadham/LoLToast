@@ -1,6 +1,7 @@
 package com.neotech.loltoast;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -47,8 +48,17 @@ public class MainActivity extends Activity {
         // Repopulate user data
        restoreData();
 
+        // Set the start/stop button label based on service state
+        Button button = (Button) findViewById(R.id.activate_button);
+        if(isMyServiceRunning(LoLToastService.class)){
+            button.setText(R.string.stop);
+            service_status = true;
+        } else {
+            button.setText(R.string.start);
+            service_status = false;
+        }
+
         // Initialise the Save Button listener
-        service_status = false;
         addListenerOnButton();
     }
 
@@ -209,5 +219,15 @@ public class MainActivity extends Activity {
         commitData();
 
         super.onPause();
+    }
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
